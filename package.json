@@ -1,0 +1,28 @@
+{
+  "devDependencies": {
+    "cypress": "^13.6.0",
+    "cypress-firebase": "^3.0.2",
+    "cypress-xpath": "^2.0.1",
+    "eslint-plugin-cypress": "^2.14.0",
+    "exceljs": "^4.4.0",
+    "firebase": "^10.7.1",
+    "firebase-admin": "^12.0.0",
+    "fs-extra": "^11.2.0",
+    "xlsx": "^0.18.5"
+  },
+  "name": "cypressautomation",
+  "version": "1.0.0",
+  "main": "cypress.config.js",
+  "dependencies": {
+    "@babel/core": "^7.23.5",
+    "fs": "0.0.1-security",
+    "prompt-sync": "^4.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "akash",
+  "license": "ISC",
+  "keywords": [],
+  "description": ""
+}
