@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 14
       - run: npm install
-      - run: npm test
+      - run: npm run cypress:open
 
   publish-npm:
     needs: build
