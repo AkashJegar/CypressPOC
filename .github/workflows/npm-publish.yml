@@ -6,7 +6,10 @@ name: Node.js Package
 on:
   release:
     types: [created]
-
+  workflow_dispatch: {}
+  push:
+    branches:
+      - 'feature/feature-branch'
 jobs:
   build:
     runs-on: ubuntu-latest
