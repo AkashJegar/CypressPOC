@@ -1,7 +1,8 @@
 {
   "devDependencies": {
-    "cypress": "^13.6.0",
+    "cypress": "^13.6.6",
     "cypress-firebase": "^3.0.2",
+    "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-xpath": "^2.0.1",
     "eslint-plugin-cypress": "^2.14.0",
     "exceljs": "^4.4.0",
@@ -19,7 +20,9 @@
   "dependencies": {
     "@babel/core": "^7.23.5",
     "fs": "0.0.1-security",
-    "prompt-sync": "^4.2.0"
+    "junit": "^1.4.9",
+    "prompt-sync": "^4.2.0",
+    "reporter": "^0.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
