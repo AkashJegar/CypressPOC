@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - main
- 
+  # schedule:
+  #   - cron: '*/5 * * * *'
+   
 jobs:
   cypress:
     runs-on: windows-latest
@@ -18,8 +20,35 @@ jobs:
         with:
           node-version: 14
  
+      - name: Cache Cypress
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/Cypress
+            node_modules
+          key: cypress-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            cypress-${{ runner.os }}-
+      - name: Install Cypress
+        run: npx cypress install
+ 
       - name: Install dependencies
         run: npm install
  
       - name: Run Cypress tests
-        run: npm run cypress:run
+        run: npm run cypress:run -- --config-file=cypress.config.js
+       
+      - name: Save JUnit Test Results
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: cypress/results
+ 
+      - name: Save Cypress Test Videos
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-videos
+          path: cypress/videos
+ 
