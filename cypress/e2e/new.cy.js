@@ -1,5 +1,8 @@
- describe('Login and dashboard iteration', () =>{
-    it('valid', () =>{
+/// <reference types = "cypress"/>
+import 'cypress-iframe'
+
+describe('Login and dashboard iteration', () =>{
+
         it('alerts', function (){
             // launch url
             cy.visit("https://register.rediff.com/register/register.php");
@@ -41,7 +44,7 @@
             })
           });
           */
-    })
-
     });
+
+
 

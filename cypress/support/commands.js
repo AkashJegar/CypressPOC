@@ -24,4 +24,23 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 // cypress/support/commands.js or cypress/support/index.js
-import 'cypress-xpath';
+// import 'cypress-xpath';
+
+Cypress.Commands.add('demourl',() =>{
+    cy.visit('https://opensource-demo.orangehrmlive.com/');
+});
+
+  
+
+Cypress.Commands.add('login', (username, password) => {
+    cy.get('input[name="username"]').type('Admin');
+    cy.get('input[type="password"]').type('admin123');
+    cy.get('button[type=submit]').click();
+  });
+
+  Cypress.Commands.add('invalidlogin', (username, password) => {
+    cy.get('input[name="username"]').type('aaa');
+    cy.get('input[type="password"]').type('admin123');
+    cy.get('button[type=submit]').click();
+  });
+  
